@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  .container
+    h1.main-title Users
+    
+    table.table.table-hover
+      thead
+        tr
+          th 이름
+          th 이메일
+          th 최초 로그인
+          th 사용자 타입
+          th
+      tbody
+        each user in users
+          tr
+            td
+              a(href=`/users/${user._id}`)= user.name
+            td= user.email
+            td= moment(user.createdAt).format('YYYY-MM-DD HH:mm:ss')
+            td= user.userType
+            td
+              a.btn.btn-sm.btn-outline-secondary(href=`/users/${user._id}/edit`) 
+                | #[i.fa.fa-pencil] 수정
+              | 
+              a.btn.btn-sm.need-confirm-btn.btn-outline-danger(href=`/users/${user._id}?_method=DELETE`)
+                | #[i.fa.fa-trash] 삭제

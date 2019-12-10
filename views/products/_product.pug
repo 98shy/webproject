@@ -1,0 +1,29 @@
+.card
+  .card-body
+    h4.card-title 여행지: #[span.content= product.place]
+    p.card-text 여행 코스: #[span.content= product.course]
+    p.card-text 비용: #[span.content= product.cost]
+    p.card-text #[span.content= product.content]
+
+.tags.badges
+  each tag in product.tags
+    span.badge.badge-phill.badge-secondary= tag
+    | 
+.row
+  .col-sm
+    .numbers.
+      좋아요 #[span.number.num-likes= product.numLikes],
+      댓글 #[span.number.num-answers= product.numAnswers],
+      조회수 #[span.number.num-reads= product.numReads]
+  .col-sm
+    .author
+      | #{moment(product.createdAt).format('YYYY-MM-DD')}
+      if product.author
+        | 
+        | by #[a(href=`/users/${product.author.id}`)= product.author.name] 
+
+.row
+  .col-sm
+  if currentUser
+      hr
+      a.btn.btn-primary(href='/reserves/new') 예약

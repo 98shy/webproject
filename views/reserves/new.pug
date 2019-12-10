@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+  .container
+    h1.main-title Reserve
+    form(action='/reserves', method='POST')
+      .form-group
+        label(for="productname") 여행 상품 이름
+        input.form-control(type="text", name="productname", placeholder="여행 상품의 이름을 입력해주세요", value=reserve.productname)
+      .form-group
+        label(for="reserver") 예약자 이름
+        input.form-control(type="text", name="reserver", placeholder="예약자의 이름을 적어주세요", value=reserve.reserver)
+      .form-group
+        label(for="phonenumber") 전화번호
+        input.form-control(type="text", name="phonenumber", placeholder="전화번호를 입력해주세요", value=reserve.phonenumber)
+      .form-group
+        label(for="date") 날짜
+        input.form-control(type="text", name="date", placeholder="날짜를 입력해주세요", value=reserve.date)
+      .form-group
+        label(for="count") 인원
+        input.form-control(type="text", name="count", placeholder="인원을 입력해주세요", value=reserve.count)
+      .form-group
+        label(for="totalcost") 총액
+        input.form-control(type="text", name="totalcost", placeholder="1인당 비용과 인원을 고려하여 총액을 입력해주세요", value=reserve.totalcost)
+      button.btn.btn-primary(type='submit') 예약
+

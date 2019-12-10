@@ -1,0 +1,28 @@
+extends ../layout
+
+include ../includes/_paginate
+
+block content
+  .container
+    form.form-inline.search-input-group(action='/products', method='GET')
+      i.fa.fa-search
+      input.form-control.mr-sm-2(type='text', name='term', placeholder='여행상품을 검색해보세요', aria-label='Search', value=term)
+
+    h1.main-title 
+      | Traveling Products
+      if products.total > 0
+        .small Total #{products.total} product(s)
+
+    if products.total <= 0 
+      .alert.alert-info 등록된 여행상품이 없습니다
+    else
+      .products
+        each product in products.docs
+          .product
+            a.title(href=`/products/${product.id}`)= product.title
+            include _productcard
+
+      +paginate(products, '/products', query)
+
+    hr
+    a.btn.btn-primary(href='/products/new') 등록

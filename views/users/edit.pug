@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  .container
+    h1.main-title Profile Update
+    form(action=`/users/${user._id}?_method=PUT`, method='POST')
+      .form-group
+        label(for='email') 이메일
+        input.form-control(type='email', id='email', name='email', placeholder='Email', value=user.email)
+      .form-group
+        label(for='name') 이름
+        input.form-control(type='text', id='name', name='name', placeholder='Name', value=user.name)
+      .form-group
+        label(for='userType') 사용자 타입
+        select.form-control(id='userType', name='userType')
+          option(type='text', id='userType', value="일반 고객") 일반 고객
+          option(type='text', id='userType', value="가이드") 가이드
+          option(type='text', id='userType', value="관리자") 관리자
+      .form-group
+        label(for='current_password') 현재 비밀번호
+        input.form-control(type='password', id='current_password', name='current_password', placeholder='Current Password')
+      .form-group
+        label(for='password') 비밀번호
+        input.form-control(type='password', id='password', name='password', placeholder='Password')
+      .form-group
+        label(for='password_confirmation') 비밀번호 재확인
+        input.form-control(type='password', id='password_confirmation', name='password_confirmation', placeholder='Password Confirmation')
+      a.btn.btn-outline-secondary(href='javascript:window.history.back();') 뒤로가기
+      | 
+      button.btn.btn-primary(type='submit') 완료

@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+  .container
+    h1.main-title New Product
+    form(action="/products", method="POST")
+      include _form
+      button.btn.btn-outline-primary(type="submit") 등록
+
+    

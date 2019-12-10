@@ -1,0 +1,71 @@
+extends layout
+
+block hero-unit
+  .jumbotron
+    .container
+      h1 어서오세요 Traveling입니다
+      p
+      h1 원하는 여행상품을 확인하세요
+      
+block content
+  .container
+    form.form-inline.search-input-group(action='/products', method='GET')
+      i.fa.fa-search
+      input.form-control.mr-sm-2(type='text', name='term', placeholder='여행상품을 검색해보세요', aria-label='Search', value=term)
+    .row
+      .col-md-6
+        h3 서비스 목적
+        p
+        p 본 서비스는 여행상품을 보거나 예약하는 페이지입니다.
+        p Traveling은 고객님의 즐거운 여행을 위해 항상 노력하겠습니다.
+      .col-md-6
+        h3 다른 참고 사이트
+        a.list-group-item(href='https://www.myrealtrip.com/') MyRealTrip
+        a.list-group-item(href='https://www.klook.com/ko/') KLOOK
+        a.list-group-item(href='https://www.waug.com/ko/') WAUG
+    p
+    h2 대륙별 추천 여행지
+    p
+    .row
+      .col-md-3
+        .card
+        //img.card-img-top(src='#' alt='as image')
+        .card-body
+          h4.card-title 아시아
+          p.card-text 대한민국, 일본, 중국, 베트남, 말레이시아, 필리핀 등
+          a.btn.btn-primary.stretched-link(href='#') GO
+      .col-md-3
+        .card
+        //img.card-img-top(src='eu.jpg' alt='eu image')
+        .card-body
+          h4.card-title 유럽
+          p.card-text 영국, 독일, 이탈리아, 스페인, 크로아티아, 슬로베니아 등
+          a.btn.btn-primary.stretched-link(href='https://m.post.naver.com/viewer/postView.nhn?volumeNo=26853437&memberNo=34646617&vType=VERTICAL') GO
+      .col-md-3
+        .card
+        //img.card-img-top(src='#' alt='oc image')
+        .card-body
+          h4.card-title 오세아니아
+          p.card-text 호주, 뉴질랜드, 팔라우, 피지, 파푸아뉴기니 등
+          a.btn.btn-primary.stretched-link(href='#') GO
+      .col-md-3
+        .card
+        //img.card-img-top(src='#' alt='na image')
+        .card-body
+          h4.card-title 북아메리카
+          p.card-text 미국, 캐나다
+          a.btn.btn-primary.stretched-link(href='#') GO
+      .col-md-3
+        .card
+        //img.card-img-top(src='#' alt='sa image')
+        .card-body
+          h4.card-title 남아메리카
+          p.card-text 브라질, 멕시코, ,아르헨티나, 콜롬비아, 칠레, 페루 등
+          a.btn.btn-primary.stretched-link(href='#') GO
+      .col-md-3
+        .card
+        //img.card-img-top(src='#' alt='af image')
+        .card-body
+          h4.card-title 아프리카
+          p.card-text  이집트, 마다가스카르, 모로코, 남아프리카공화국 등
+          a.btn.btn-primary.stretched-link(href='#') GO
