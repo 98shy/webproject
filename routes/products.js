@@ -85,8 +85,13 @@ router.get('/:id', catchErrors(async (req, res, next) => {
 }));
 
 router.put('/:id', catchErrors(async (req, res, next) => {
+  const err = validateForm(req.body);
+  if (err) {
+    req.flash('danger', err);
+    return res.redirect('back');
+  }
+  
   const product = await Product.findById(req.params.id);
-
   if (!product) {
     req.flash('danger', '여행 상품이 존재하지 않습니다.');
     return res.redirect('back');
@@ -115,6 +120,7 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     req.flash('danger', err);
     return res.redirect('back');
   }
+  
   const user = req.user;
   var product = new Product({
     title: req.body.title,
