@@ -27,6 +27,10 @@ if (app.get('env') === 'development') {
   app.locals.pretty = true;
 }
 
+app.get('/', function(req, res){
+  res.redirect('/webproject');
+});
+
 // Pug의 local에 moment라이브러리와 querystring 라이브러리를 사용할 수 있도록.
 app.locals.moment = require('moment');
 app.locals.querystring = require('querystring');
