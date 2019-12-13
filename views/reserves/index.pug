@@ -16,7 +16,7 @@ block content
           th 예약 일시
           th
       tbody
-        
+        each reserve in reserves
           tr
             td= reserve.productname
             td= reserve.reserver
@@ -24,6 +24,7 @@ block content
             td= reserve.date
             td= reserve.count
             td= reserve.totalcost
+            
             td= moment(reserve.reservedAt).format('YYYY-MM-DD HH:mm:ss')
             td
               a.btn.btn-sm.btn-outline-secondary(href=`/reserves/${reserve.id}/edit`) 

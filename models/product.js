@@ -9,6 +9,7 @@ var schema = new Schema({
   course: {type: String},
   cost: {type: String, trim: true, required: true},
   content: {type: String, trim: true, required: true},
+  site: [String],
   tags: [String],
   numLikes: {type: Number, default: 0},
   numAnswers: {type: Number, default: 0},

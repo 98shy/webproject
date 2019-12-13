@@ -21,23 +21,18 @@ function validateForm(form, options) {
   if (!name) {
     return '이름을 입력해주세요.';
   }
-
   if (!email) {
     return '이메일을 입력해주세요.';
   }
-
   if (!form.password && options.needPassword) {
     return '비밀번호를 입력해주세요.';
   }
-
   if (form.password !== form.password_confirmation) {
     return '비밀번호가 일치하지 않습니다.';
   }
-
   if (form.password.length < 6) {
     return '비밀번호는 6자리이상 입력해주세요.';
   }
-
   return null;
 }
 

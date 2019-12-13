@@ -32,6 +32,7 @@ router.post('', catchErrors(async (req, res, next) => {
     cost: req.body.cost,
     author: req.user._id,
     content: req.body.content,
+    site: req.body.site,
     tags: req.body.tags.map(e => e.trim()),
   });
   await product.save();
@@ -52,6 +53,7 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   product.course = req.body.course;
   product.cost = req.body.cost;
   product.content = req.body.content;
+  product.site = req.body.site;
   product.tags = req.body.tags;
   await product.save();
   res.json(product);

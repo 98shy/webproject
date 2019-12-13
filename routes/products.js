@@ -28,19 +28,15 @@ function validateForm(form) {
   if (!title) {
     return '여행 상품 이름을 입력해주세요.';
   }
-
   if (!place) {
     return '여행지를 입력해주세요.';
   }
-
   if (!cost) {
     return '1인당 비용을 입력해주세요.';
   }
-
   if (!content) {
     return '여행 코스 설명을 입력해주세요.';
   }
-
   return null;
 }
 
@@ -101,6 +97,7 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   product.course = req.body.course;
   product.cost = req.body.cost;
   product.content = req.body.content;
+  product.site = req.body.site;
   product.tags = req.body.tags.split(" ").map(e => e.trim());
 
   await product.save();
@@ -129,6 +126,7 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     cost: req.body.cost,
     author: user._id,
     content: req.body.content,
+    site: req.body.site,
     tags: req.body.tags.split(" ").map(e => e.trim()),
   });
   await product.save();
