@@ -26,9 +26,11 @@ block content
             td= reserve.totalcost
             
             td= moment(reserve.reservedAt).format('YYYY-MM-DD HH:mm:ss')
-            td
-              a.btn.btn-sm.btn-outline-secondary(href=`/reserves/${reserve.id}/edit`) 
-                | #[i.fa.fa-pencil] 수정
-              | 
-              a.btn.btn-sm.need-confirm-btn.btn-outline-danger(href=`/reserves/${reserve.id}?_method=DELETE`)
-                | #[i.fa.fa-trash] 삭제
+            if currentUser
+              if reserve.author && reserve.author.id == currentUser.id
+                td
+                  a.btn.btn-sm.btn-outline-secondary(href=`/reserves/${reserve.id}/edit`) 
+                    | #[i.fa.fa-pencil] 수정
+                  | 
+                  a.btn.btn-sm.need-confirm-btn.btn-outline-danger(href=`/reserves/${reserve.id}?_method=DELETE`)
+                    | #[i.fa.fa-trash] 삭제

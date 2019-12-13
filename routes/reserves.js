@@ -56,7 +56,7 @@ router.get('/', needAuth, catchErrors(async (req, res, next) => {
 }));
 
 router.get('/new', needAuth, (req, res, next) => {
-  res.render('reserves/new', {reserves: {}});
+  res.render('reserves/new', {reserve: {}});
 });
 
 router.get('/:id/edit', needAuth, catchErrors(async (req, res, next) => {
