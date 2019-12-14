@@ -149,7 +149,7 @@ router.post('/:id/comments', needAuth, catchErrors(async (req, res, next) => {
     content: req.body.content
   });
   await comment.save();
-  product.numComment++;
+  product.numComments++;
   await product.save();
 
   req.flash('success', '성공적으로 댓글이 등록되었습니다.');

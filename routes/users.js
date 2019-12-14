@@ -77,7 +77,7 @@ router.put('/:id', needAuth, catchErrors(async (req, res, next) => {
   }
   await user.save();
   req.flash('success', '성공적으로 수정되었습니다.');
-  res.redirect('/users');
+  res.redirect('/');
 }));
 
 router.delete('/:id', needAuth, catchErrors(async (req, res, next) => {

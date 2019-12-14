@@ -1,7 +1,7 @@
 .card
   .card-body
     h4.card-title 여행지: #[span.content= product.place]
-    p.card-text 여행 코스: #[span.content= product.course]
+    p.card-text 여행코스 테마: #[span.content= product.course]
     p.card-text 비용: #[span.content= product.cost]
     p.card-text #[span.content= product.content]
     p.card-text #[span.content= product.site]
@@ -14,7 +14,7 @@
   .col-sm
     .numbers.
       좋아요 #[span.number.num-likes= product.numLikes],
-      댓글 #[span.number.num-answers= product.numAnswers],
+      댓글 #[span.number.num-comments= product.numComments],
       조회수 #[span.number.num-reads= product.numReads]
   .col-sm
     .author

@@ -1,11 +1,11 @@
 .form-group
-  label(for="title") 여행 상품 이름
+  label(for="title") 여행상품 이름
   input.form-control(type="text", name="title", placeholder="여행 상품의 이름을 입력해주세요", value=product.title)
 .form-group
   label(for="place") 여행지
   input.form-control(type="text", name="place", placeholder="여행지를 입력해주세요", value=product.place)
 .form-group
-  label(for='course') 여행 코스
+  label(for='course') 여행코스 테마
     select.form-control(id='course', name='course')
       option(type="text", name='course', value="액티비티") 액티비티
       option(type="text", name='course', value="힐링") 힐링
@@ -20,8 +20,8 @@
   label(for="content") 설명
   textarea.form-control(name="content", placeholder="여행 코스를 설명해주세요", rows="10")= product.content
 .form-group
-  label(for="site") 참조 사이트
-  input.form-control(type="text", name="site", placeholder="참조 사이트를 입력해주세요", value=product.site)
+  label(for="site") 참고 사이트
+  input.form-control(type="text", name="site", placeholder="참고 사이트를 입력해주세요", value=product.site)
 .form-group
   label(for="tags") 태그
   input.form-control(type="text", name="tags", placeholder="태그를 입력해주세요", value=product.tags ? product.tags.join(" ") : "")
