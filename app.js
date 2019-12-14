@@ -96,6 +96,11 @@ app.use('/reserves', reserves);
 require('./routes/auth')(app, passport);
 app.use('/api', require('./routes/api'));
 
+var port = process.env.PORT || 3000;
+app.listen(port, function(){
+  console.log('Server On!');
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
