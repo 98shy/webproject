@@ -8,6 +8,7 @@ var schema = new Schema({
   email: {type: String, required: true, index: true, unique: true, trim: true},
   password: {type: String},
   facebook: {id: String, token: String, photo: String},
+  naver: {id: String, token: String, photo: String},
   userType: {type: String},
   createdAt: {type: Date, default: Date.now}
 }, {
